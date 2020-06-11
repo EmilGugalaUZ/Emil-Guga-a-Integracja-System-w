@@ -1,0 +1,1571 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/2/2020 4:43:19 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-A0BT25H"
+  DTS:CreatorName="DESKTOP-A0BT25H\Emil"
+  DTS:DTSID="{32B58FE0-A98F-4AA0-847D-3233074F0FE6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{8C2536A7-9179-49E2-9A1F-BF8FE3E7A18D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-A0BT25H\MSSQLSERVER2.AdventureWorks2017 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CFBB2503-98AF-445B-8294-A984514DF612}"
+      DTS:ObjectName="DESKTOP-A0BT25H\MSSQLSERVER2.AdventureWorks2017 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-A0BT25H\MSSQLSERVER2;Initial Catalog=AdventureWorks2017;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{AA572B57-D9F6-4265-932D-9A9433076B44}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Emil\source\repos\Emil Gugała zadanie 3 Integracja Systemów\lab5\lab5\Inventory Worksheet.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{79B09C66-B586-4A5A-81EE-D396AC4D8253}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Emil\source\repos\Emil Gugała zadanie 3 Integracja Systemów\lab6\lab6\Transaction History.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{137500A1-4A7B-49F0-BAC9-F93B848B0A64}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Emil\source\repos\Emil Gugała zadanie 3 Integracja Systemów\lab6\lab6\FromExcelToFlat.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductID"
+              DTS:DTSID="{53D30E6C-05A8-4D1D-ACC7-FC5DF801F65F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LocationID"
+              DTS:DTSID="{650F406C-8B5A-4097-B221-A90387A91919}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Shelf"
+              DTS:DTSID="{8FD1B11E-4C6D-4B36-B17B-4AF43EF7F32D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Bin"
+              DTS:DTSID="{905CEC9A-5736-40D5-8857-121020FA1B0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PhysicalCount"
+              DTS:DTSID="{91452551-F536-44D6-918F-C5DEE281F0B5}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BABE599D-659A-43D0-A526-BAEF933A0604}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Emil\source\repos\Emil Gugała zadanie 3 Integracja Systemów\lab6\lab6\FromExcelToFlat.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductID"
+              DTS:DTSID="{EBDFEAB8-2342-4874-9506-8D273CB7D64F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LocationID"
+              DTS:DTSID="{E0EC7218-D35E-4B19-AE92-8DD3EF94AFD0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Shelf"
+              DTS:DTSID="{08258DCD-9AE1-4A47-9500-DB3EFC648F4C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Bin"
+              DTS:DTSID="{6E278BBC-2762-4200-BBD0-2001E59BB03E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PhysicalCount"
+              DTS:DTSID="{39A2352F-9D85-46B9-9C07-E021FC38DF0B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{01EFC4BE-E05C-4C42-B88B-AA4DC278F465}"
+      DTS:ObjectName="Flat File Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="C:\Users\Emil\source\repos\Emil Gugała zadanie 3 Integracja Systemów\lab6\lab6\FromExcelToFlat.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductID"
+              DTS:DTSID="{FB435A3E-F676-4E8C-A28B-EE7BFBA30E3C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LocationID"
+              DTS:DTSID="{CA299D1B-6E6D-4806-9915-9D95E5C49838}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Shelf"
+              DTS:DTSID="{5C471C1C-D815-4E6F-9251-E9B01627BA2E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Bin"
+              DTS:DTSID="{337AB3D7-117F-4623-9036-B770C02BFD4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PhysicalCount"
+              DTS:DTSID="{406FB958-F4AC-4384-AADF-DC623FE0900A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager File to Database]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C8C9506D-F57D-490B-9EAB-5264FFC839F1}"
+      DTS:ObjectName="Flat File Connection Manager File to Database">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Emil\source\repos\Emil Gugała zadanie 3 Integracja Systemów\lab5\lab5\EmployeeList.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmpID"
+              DTS:DTSID="{7BA43786-216B-46E0-92D5-C5DFFBAA4DA4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{8913ED81-113E-4F1F-81F1-B6D24075F964}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SickDays"
+              DTS:DTSID="{2BF44BA3-8278-44F1-A12C-1912D1CDB3D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VacationDays"
+              DTS:DTSID="{5AC49701-48C1-4BFA-92F9-F730F9235084}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Extract]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7F46C99D-F14C-42BD-92A1-8CAD797C049B}"
+      DTS:ObjectName="Flat File Extract">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Emil\Downloads\lab5 (1)\lab5\EmployeeList.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmpID"
+              DTS:DTSID="{1AFA6593-369C-4000-A5C0-B6E755BAEE32}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{46FA849E-8D60-4FF9-BF32-153C0B875137}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SickDays"
+              DTS:DTSID="{61DB2E33-788B-47D5-BACA-4A09E5E86205}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VacationDays"
+              DTS:DTSID="{5DCAD54B-96B7-4746-9F5B-8DC260A78AC2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Excel extract"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{887DB134-31DB-4BD5-AEB6-E5B45EF7C0E2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Excel extract"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Excel extract\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Inventory_Worksheet</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Excel extract\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Excel extract\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[ProductID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].ExternalColumns[ProductID]"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[LocationID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].ExternalColumns[LocationID]"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[LocationID]"
+                      name="LocationID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[Shelf]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].ExternalColumns[Shelf]"
+                      length="255"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[Shelf]"
+                      name="Shelf"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[Bin]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].ExternalColumns[Bin]"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[Bin]"
+                      name="Bin"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[PhysicalCount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].ExternalColumns[PhysicalCount]"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[PhysicalCount]"
+                      name="PhysicalCount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].ExternalColumns[ProductID]"
+                      dataType="r8"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].ExternalColumns[LocationID]"
+                      dataType="r8"
+                      name="LocationID" />
+                    <externalMetadataColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].ExternalColumns[Shelf]"
+                      dataType="wstr"
+                      length="255"
+                      name="Shelf" />
+                    <externalMetadataColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].ExternalColumns[Bin]"
+                      dataType="r8"
+                      name="Bin" />
+                    <externalMetadataColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].ExternalColumns[PhysicalCount]"
+                      dataType="r8"
+                      name="PhysicalCount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[ProductID]"
+                      dataType="r8"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[LocationID]"
+                      dataType="r8"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[LocationID]"
+                      name="LocationID" />
+                    <outputColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[Shelf]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[Shelf]"
+                      name="Shelf" />
+                    <outputColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[Bin]"
+                      dataType="r8"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[Bin]"
+                      name="Bin" />
+                    <outputColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[PhysicalCount]"
+                      dataType="r8"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[PhysicalCount]"
+                      name="PhysicalCount" />
+                    <outputColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Excel extract\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1045"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Excel extract\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].Columns[ProductID]"
+                      cachedDataType="r8"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ProductID]"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].Columns[LocationID]"
+                      cachedDataType="r8"
+                      cachedName="LocationID"
+                      externalMetadataColumnId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LocationID]"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[LocationID]" />
+                    <inputColumn
+                      refId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].Columns[Shelf]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Shelf"
+                      externalMetadataColumnId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Shelf]"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[Shelf]" />
+                    <inputColumn
+                      refId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].Columns[Bin]"
+                      cachedDataType="r8"
+                      cachedName="Bin"
+                      externalMetadataColumnId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Bin]"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[Bin]" />
+                    <inputColumn
+                      refId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].Columns[PhysicalCount]"
+                      cachedDataType="r8"
+                      cachedName="PhysicalCount"
+                      externalMetadataColumnId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PhysicalCount]"
+                      lineageId="Package\Excel extract\Excel Source.Outputs[Excel Source Output].Columns[PhysicalCount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ProductID]"
+                      dataType="r8"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LocationID]"
+                      dataType="r8"
+                      name="LocationID" />
+                    <externalMetadataColumn
+                      refId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Shelf]"
+                      dataType="wstr"
+                      length="255"
+                      name="Shelf" />
+                    <externalMetadataColumn
+                      refId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Bin]"
+                      dataType="r8"
+                      name="Bin" />
+                    <externalMetadataColumn
+                      refId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PhysicalCount]"
+                      dataType="r8"
+                      name="PhysicalCount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Excel extract.Paths[Excel Source Output]"
+              endId="Package\Excel extract\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Excel extract\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Flat File Extract"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4B4F5671-4D30-4AF4-A97C-0932039CF55F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Flat File Extract"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Flat File Extract\EmployeeList"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="EmployeeList"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[EmployeeList]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Flat File Extract\EmployeeList.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-A0BT25H\MSSQLSERVER2.AdventureWorks2017 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-A0BT25H\MSSQLSERVER2.AdventureWorks2017 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input].Columns[EmpID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmpID"
+                      externalMetadataColumnId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input].ExternalColumns[EmpID]"
+                      lineageId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].Columns[EmpID]" />
+                    <inputColumn
+                      refId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input].Columns[Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input].Columns[SickDays]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SickDays"
+                      externalMetadataColumnId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input].ExternalColumns[SickDays]"
+                      lineageId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SickDays]" />
+                    <inputColumn
+                      refId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input].Columns[VacationDays]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VacationDays"
+                      externalMetadataColumnId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input].ExternalColumns[VacationDays]"
+                      lineageId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].Columns[VacationDays]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input].ExternalColumns[EmpID]"
+                      dataType="i4"
+                      name="EmpID" />
+                    <externalMetadataColumn
+                      refId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input].ExternalColumns[SickDays]"
+                      dataType="i4"
+                      name="SickDays" />
+                    <externalMetadataColumn
+                      refId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input].ExternalColumns[VacationDays]"
+                      dataType="i4"
+                      name="VacationDays" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Flat File Extract\EmployeeList.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Flat File Extract\EmployeeList.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Flat File Extract\EmployeeList.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Flat File Extract\EmployeeList.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Flat File Extract\EmployeeList.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Flat File Extract\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Flat File Extract\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager File to Database]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager File to Database]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].Columns[EmpID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmpID]"
+                      length="50"
+                      lineageId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].Columns[EmpID]"
+                      name="EmpID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].Columns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SickDays]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SickDays]"
+                      length="50"
+                      lineageId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SickDays]"
+                      name="SickDays"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].Columns[VacationDays]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[VacationDays]"
+                      length="50"
+                      lineageId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].Columns[VacationDays]"
+                      name="VacationDays"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmpID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmpID" />
+                    <externalMetadataColumn
+                      refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SickDays]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SickDays" />
+                    <externalMetadataColumn
+                      refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[VacationDays]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VacationDays" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Flat File Extract.Paths[Flat File Source Output]"
+              endId="Package\Flat File Extract\EmployeeList.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Flat File Extract\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\OLE DB Extract"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F2A15CA1-F566-4E5A-90C8-A1EADA99EA8E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="OLE DB Extract"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\OLE DB Extract\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Production].[Product]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT TransactionID
+,ProductID
+,TransactionDate
+,Quantity
+,ActualCost
+,ModifiedDate
+FROM Production.TransactionHistory
+WHERE Quantity &gt; 2</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\OLE DB Extract\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-A0BT25H\MSSQLSERVER2.AdventureWorks2017 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-A0BT25H\MSSQLSERVER2.AdventureWorks2017 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransactionID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TransactionID]"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransactionID]"
+                      name="TransactionID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransactionDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TransactionDate]"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransactionDate]"
+                      name="TransactionDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActualCost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActualCost]"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActualCost]"
+                      name="ActualCost"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TransactionID]"
+                      dataType="i4"
+                      name="TransactionID" />
+                    <externalMetadataColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TransactionDate]"
+                      dataType="dbTimeStamp"
+                      name="TransactionDate" />
+                    <externalMetadataColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActualCost]"
+                      dataType="cy"
+                      name="ActualCost" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TransactionID]"
+                      dataType="i4"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TransactionID]"
+                      name="TransactionID" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TransactionDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TransactionDate]"
+                      name="TransactionDate" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      dataType="i4"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      name="Quantity" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActualCost]"
+                      dataType="cy"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActualCost]"
+                      name="ActualCost" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      name="ModifiedDate" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\OLE DB Extract\TransactionHistory"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Excel Destination"
+              name="TransactionHistory"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">TransactionHistory</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\OLE DB Extract\TransactionHistory.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Excel Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].ExternalColumns[ProductID]"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].Columns[ModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ModifiedDate"
+                      externalMetadataColumnId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]" />
+                    <inputColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].Columns[TransactionID]"
+                      cachedDataType="i4"
+                      cachedName="TransactionID"
+                      externalMetadataColumnId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].ExternalColumns[TransactionID]"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransactionID]" />
+                    <inputColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].Columns[TransactionDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TransactionDate"
+                      externalMetadataColumnId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].ExternalColumns[TransactionDate]"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransactionDate]" />
+                    <inputColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].Columns[Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].Columns[ActualCost]"
+                      cachedDataType="cy"
+                      cachedName="ActualCost"
+                      externalMetadataColumnId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].ExternalColumns[ActualCost]"
+                      lineageId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output].Columns[ActualCost]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].ExternalColumns[ProductID]"
+                      dataType="r8"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].ExternalColumns[ModifiedDate]"
+                      dataType="date"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].ExternalColumns[TransactionID]"
+                      dataType="r8"
+                      name="TransactionID" />
+                    <externalMetadataColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].ExternalColumns[TransactionDate]"
+                      dataType="date"
+                      name="TransactionDate" />
+                    <externalMetadataColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].ExternalColumns[Quantity]"
+                      dataType="r8"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input].ExternalColumns[ActualCost]"
+                      dataType="cy"
+                      name="ActualCost" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\OLE DB Extract\TransactionHistory.Outputs[Excel Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Excel Destination Error Output"
+                  synchronousInputId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\OLE DB Extract\TransactionHistory.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\OLE DB Extract\TransactionHistory.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\OLE DB Extract\TransactionHistory.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\OLE DB Extract.Paths[OLE DB Source Output]"
+              endId="Package\OLE DB Extract\TransactionHistory.Inputs[Excel Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\OLE DB Extract\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Excel extract"
+          TopLeft="18,17" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Flat File Extract"
+          TopLeft="22,95" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\OLE DB Extract"
+          TopLeft="172,15" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Excel extract">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Excel extract\Flat File Destination"
+          TopLeft="46,198" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Excel extract\Excel Source"
+          TopLeft="60,60" />
+        <EdgeLayout
+          Id="Package\Excel extract.Paths[Excel Source Output]"
+          TopLeft="130.75,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,96"
+              Start="0,0"
+              End="0,88.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Excel extract\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Flat File Extract">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Flat File Extract\Flat File Source"
+          TopLeft="152,72" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Flat File Extract\EmployeeList"
+          TopLeft="153,183" />
+        <EdgeLayout
+          Id="Package\Flat File Extract.Paths[Flat File Source Output]"
+          TopLeft="225.5,114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Flat File Extract\EmployeeList">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\OLE DB Extract">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\OLE DB Extract\TransactionHistory"
+          TopLeft="182,206" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\OLE DB Extract\OLE DB Source"
+          TopLeft="186,77" />
+        <EdgeLayout
+          Id="Package\OLE DB Extract.Paths[OLE DB Source Output]"
+          TopLeft="263.25,119">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,87"
+              Start="0,0"
+              End="0,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\OLE DB Extract\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\OLE DB Extract\TransactionHistory">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
